@@ -1,0 +1,1 @@
+{"name":"Local: 4571","url":"c:\\Users\\home\\Desktop\\cpp.solve\\4571.cpp","tests":[{"id":1666449276831,"input":"60\n100","output":"245\n64"},{"id":1666449372746,"input":"60\n63","output":"-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\home\\Desktop\\cpp.solve\\4571.cpp","group":"local","local":true}
