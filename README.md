@@ -1,2 +1,2 @@
 # cpp.solve
-solve to Programming problem
+BOJ, codeup
