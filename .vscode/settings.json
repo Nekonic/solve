@@ -74,7 +74,8 @@
     "set": "cpp",
     "map": "cpp",
     "cstring": "cpp",
-    "climits": "cpp"
+    "climits": "cpp",
+    "queue": "cpp"
   },
   "git.ignoreLimitWarning": true
 }
