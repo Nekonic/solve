@@ -76,7 +76,8 @@
     "cstring": "cpp",
     "climits": "cpp",
     "queue": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "hash_map": "cpp"
   },
   "git.ignoreLimitWarning": true
 }
