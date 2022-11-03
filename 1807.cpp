@@ -18,6 +18,9 @@ long long Collatz(long long n){
     }
 }
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     C x;
     long long n,m,l=0;
     cin >> n >> m;
