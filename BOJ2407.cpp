@@ -1,16 +1,26 @@
-#include <stdio.h>
-int nCk(int n,int k){
-    unsigned long long int x=1;
-    if(n-k<n/2)k=n-k;
-    for(int i=1;i<=k;i++){
-        x=(x*n)/i;
-        n--;
-    }
-	return x;
+#include <iostream>
+#include <cmath>
+using namespace std;
+__uint128_t memo[101][101]={};
+__uint128_t c(int n, int m){
+    if(n==m||m==0)return memo[n][m]=1;
+    if(memo[n][m]!=0)return memo[n][m];
+    return memo[n][m]=c(n-1,m-1)+c(n-1,m);
 }
 int main(){
-	int n,k;
-	scanf("%d%d",&n,&k);
-	printf("%lld",nCk(n,k));
-	return 0;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int n,m;
+    cin >> n >> m;
+    __uint128_t result = c(n,m);
+    string r = ""; 
+    string f = to_string((long long) (result /  (__uint128_t) pow(10, 15))) ; 
+    string s = to_string((long long) (result % (__uint128_t) pow(10, 15))) ; 
+    if ( f == "0") { 
+        r = s ; 
+    } else {
+        r = f + s; 
+    }
+    cout <<  r  << '\n';
 }
