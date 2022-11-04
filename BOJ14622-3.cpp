@@ -1,82 +1,76 @@
-#include <stdio.h>
 #include <algorithm>
 #include <vector>
 #include <set>
-#include <cmath>
+#include <map>
+#include <iostream>
 using namespace std;
-set<int> s;
-int NumberArray[2237] = {};
-void eratos(){
-    for (int i = 2; i<=sqrt(5000000); i++)
-    {
-        if (NumberArray[i]) continue;
-        for (int j = i * i; j <= 2237; j += i)
-        {
-            NumberArray[j] = 1;
-        }
-    }
-    for (int i = 2; i <= 2237; i++)
-    {
-        if (!NumberArray[i])s.insert(i);
-    }
+bool isPrime(int n){
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+    if (n % 2 == 0 || n % 3 == 0)
+        return false;
+    for (int i = 5; i * i <= n; i = i + 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+    return true;
 }
-int main()
-{
-    eratos();
-    set<int, greater<int>> abprime,aprime,bprime;
-    int n, cnt = 0, pna = 0, pnb = 0;
-    scanf("%d", &n);
-    int a[n] = {}, b[n] = {};
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d%d", &a[i], &b[i]);
-        set<int>::iterator iter1 = s.find(a[i]);
-        set<int>::iterator iter2 = s.find(b[i]);
-        set<int>::iterator itera = aprime.begin();
-        set<int>::iterator iterb = bprime.begin();
-        //규칙 2
-        if (iter1 == s.end() && b[i] < 2 || iter2 == s.end() && a[i] < 2)continue;
-        else if (iter1 == s.end() || a[i] < 2)
-        {
-            if(iter2 != s.end() && b[i] < 2){
-                abprime.insert(b[i]);bprime.insert(b[i]);
-            }
-            pnb++;
-            if(pna <= 2)cnt-=1000;
-            else {
-                itera = aprime.begin();itera++;itera++;
-                cnt-=*itera;
-            }
-            continue;
-        }
-        else if (iter2 == s.end() || b[i] < 2)
-        {
-            abprime.insert(a[i]);aprime.insert(a[i]);
-            pna++;
-            if(pnb <= 2)cnt+=1000;
-            else {
-                iterb = bprime.begin();iterb++;iterb++;
-                cnt+=*iterb;
-            }
-            continue;
-        }
-        //규칙 3
-        else
-        {
-            iter1=abprime.find(a[i]);
-            iter2=abprime.find(b[i]);
-            if (i!=0 && abprime.find(a[i]) != abprime.end() && abprime.find(b[i]) != abprime.end());
-            else if (iter1 != abprime.end())
-            {
-                cnt -= 1000;
-            }
-            else if (iter2 != abprime.end())
-            {
-                cnt += 1000;
+int n;
+long long a,b,cnt1=0,cnt2=0;
+map<int,bool> abprimes;
+set<int, greater<int>> aprime,bprime;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    cin >> n;
+    for(int t=0; t<n; t++){
+        cin >> a >> b;
+        set<int, greater<int>>::iterator iter = aprime.begin();
+        //규칙2
+        if(!isPrime(a)){
+            //cout << a << " is not prime\n";
+            if(bprime.size()<3)cnt2+=1000;
+            else{
+                int cntx=1;
+                for (auto i : bprime){
+                    if(cntx==3){
+                        cnt2 += i;
+                        break;
+                    }cntx++;
+                }
             }
         }
-        abprime.insert(a[i]);aprime.insert(a[i]);
-        abprime.insert(b[i]);bprime.insert(b[i]);
+        else {
+            if(abprimes.find(a)!=abprimes.end())cnt1-=1000;
+            else{
+                //cout << a << " is not find\n";
+                aprime.insert(a);
+                abprimes.insert({a, true});
+            }
+        }
+        if(!isPrime(b)){
+            if(aprime.size()<3)cnt1+=1000;
+            else{
+                int cntx=1;
+                for (auto i : aprime){
+                    if(cntx==3){
+                        cnt1 += i;
+                        break;
+                    }cntx++;
+                }
+            }
+        }else{
+            if(abprimes.find(b)!=abprimes.end())cnt2-=1000;
+            else{
+                //cout << b << " is not find\n";
+                bprime.insert(b);
+                abprimes.insert({b, true});
+            }
+        }
     }
-    printf(cnt > 0 ? "소수의 신 갓대웅" : (cnt == 0 ? "우열을 가릴 수 없음" : "소수 마스터 갓규성"));
+    if(cnt1==cnt2)cout << "우열을 가릴 수 없음";
+    else if(cnt1>cnt2)cout << "소수의 신 갓대웅";
+    else cout << "소수 마스터 갓규성";
 }
