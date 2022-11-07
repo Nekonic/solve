@@ -78,7 +78,8 @@
     "queue": "cpp",
     "stack": "cpp",
     "hash_map": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "random": "c"
   },
   "git.ignoreLimitWarning": true
 }
