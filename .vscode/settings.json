@@ -79,7 +79,8 @@
     "stack": "cpp",
     "hash_map": "cpp",
     "valarray": "cpp",
-    "random": "c"
+    "random": "c",
+    "complex": "c"
   },
   "git.ignoreLimitWarning": true
 }
