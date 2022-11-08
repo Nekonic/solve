@@ -1,14 +1,21 @@
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
 int main(){
-    int n,k,m=0;
-    char c;
+    int n,k;
     scanf("%d",&n);
-    while (n){
-        scanf("%c",&c);
-        if(c=='1')m+=pow(2,n);
-        n--;
-    }scanf("%d",&k);k=pow(2,k);
-    if(m%k==0)printf("YES");
+    int m[n],cnt=0;
+    for(int i=n-1; i>=0; i--){
+        scanf("%1d", &m[i]);
+        if(m[i]==1)cnt++;
+    }scanf("%d",&k);
+    if(cnt==0){
+        printf("YES");
+        return 0;
+    }else cnt=0;
+    for(int i=0; i<n; i++){
+        if(m[i]==1)break;
+        else cnt++;
+    }
+    if(k==0||cnt>=k)printf("YES");
     else printf("NO");
 }
