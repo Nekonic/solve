@@ -80,7 +80,8 @@
     "hash_map": "cpp",
     "valarray": "cpp",
     "random": "c",
-    "complex": "c"
+    "complex": "c",
+    "stdlib.h": "c"
   },
   "git.ignoreLimitWarning": true
 }
