@@ -82,7 +82,8 @@
     "random": "c",
     "complex": "c",
     "stdlib.h": "c",
-    "chrono": "c"
+    "chrono": "c",
+    "stdio.h": "c"
   },
   "git.ignoreLimitWarning": true
 }
