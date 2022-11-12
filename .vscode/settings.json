@@ -81,7 +81,8 @@
     "valarray": "cpp",
     "random": "c",
     "complex": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "chrono": "c"
   },
   "git.ignoreLimitWarning": true
 }
