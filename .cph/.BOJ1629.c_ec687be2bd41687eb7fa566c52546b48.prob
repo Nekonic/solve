@@ -1,0 +1,1 @@
+{"name":"Local: BOJ1629","url":"c:\\Users\\home\\Desktop\\cpp.solve\\BOJ1629.c","tests":[{"id":1668173728794,"input":"10 11 12","output":"4"},{"id":1668175348656,"input":"134141 134141 2","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\home\\Desktop\\cpp.solve\\BOJ1629.c","group":"local","local":true}
