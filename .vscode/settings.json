@@ -83,7 +83,8 @@
     "complex": "c",
     "stdlib.h": "c",
     "chrono": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "math.h": "c"
   },
   "git.ignoreLimitWarning": true
 }
