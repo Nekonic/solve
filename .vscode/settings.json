@@ -84,7 +84,8 @@
     "stdlib.h": "c",
     "chrono": "c",
     "stdio.h": "c",
-    "math.h": "c"
+    "math.h": "c",
+    "stdbool.h": "c"
   },
   "git.ignoreLimitWarning": true
 }
