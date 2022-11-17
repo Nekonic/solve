@@ -1,0 +1,1 @@
+{"name":"Local: BOJ1934","url":"c:\\Users\\home\\Desktop\\cpp.solve\\BOJ1934.c","tests":[{"id":1668659476561,"input":"3\n1 45000\n6 10\n13 17","output":"45000\n30\n221"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\home\\Desktop\\cpp.solve\\BOJ1934.c","group":"local","local":true}
