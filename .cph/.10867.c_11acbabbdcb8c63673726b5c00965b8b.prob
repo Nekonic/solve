@@ -1,0 +1,1 @@
+{"name":"Local: 10867","url":"c:\\Users\\kybpl\\OneDrive\\문서\\GitHub\\cpp.solve\\10867.c","tests":[{"id":1668819774400,"input":"10\n1 4 2 3 1 4 2 3 1 2","output":"1 2 3 4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\kybpl\\OneDrive\\문서\\GitHub\\cpp.solve\\10867.c","group":"local","local":true}
