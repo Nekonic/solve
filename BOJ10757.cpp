@@ -12,5 +12,4 @@ int main(){
             c.push_back(temp);
         }else temp=0;
     }
-    
 }
