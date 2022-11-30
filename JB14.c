@@ -9,7 +9,7 @@ int main(){
         }
     }for(int i=0; i<strlen(str); i++){
         for(int j=i; j<strlen(str); j++){
-            if(strcmp(str1[i],str1[j+1])>0){
+            if(strcmp(str1[i],str1[j])>0){
                 strcpy(temp,str1[j]);
                 strcpy(str1[j],str1[i]);
                 strcpy(str1[i],temp);
