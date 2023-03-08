@@ -11,11 +11,15 @@ int main(){
         a.push_back(vel);
     }sort(a.begin(),a.end());
     n-=m;
-    for(int i=2; i>=0; i--){
-        x+=n/a[i];
-        n%=a[i];
-        if(n==0)break;
-    }
+    x+=n/a[2];
+    n%=a[2];
+
+    x+=n/a[1];
+    n%=a[1];
+
+    x+=n/a[0];
+    n%=a[0];
+
     if(n==0)cout << x;
     else cout << -1;
 }
