@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/home/Desktop/cpp.solve",
-      "program": "c:/Users/home/Desktop/cpp.solve/build/Debug/outDebug",
+      "cwd": "c:/Users/kybpl/OneDrive/문서/GitHub/cpp.solve",
+      "program": "c:/Users/kybpl/OneDrive/문서/GitHub/cpp.solve/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
