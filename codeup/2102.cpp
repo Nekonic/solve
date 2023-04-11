@@ -1,29 +1,15 @@
-#include <iostream>
-#include <string>
-#include <climits>
+#include <bits/stdc++.h>
 using namespace std;
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int m;
-    cin >> m;
-    unsigned long long x;
-    string s;
-    for(int i=1; m*i<ULLONG_MAX; i++){
-        x=m*i;
-        s=to_string(x);
-        int cnt=0;
-        for(int j=0; j<s.length(); j++){
-            if(s[0]=='1'&&s[j]=='0'||s[j]=='1'){
-                cnt++;
-            }
-        }
-        if(cnt==s.length()){
-            cout << x;
-            return 0;
-        }
-    }
-    cout << "0";
+unsigned long long ans=0,n,mxn=__UINT64_MAX__;
+void bfs(unsigned long long i){
+    if(i%n==0)mxn=min(mxn,i);
+    if(i>(1111111111111111112))return;
+    bfs(i*10);
+    bfs(i*10+1);
+}
+int main(){
+    cin >> n;
+    bfs(1);
+    if(mxn==__UINT64_MAX__)cout << 0;
+    else cout << mxn;
 }
