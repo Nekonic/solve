@@ -1,24 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
+queue<int> q;
+vector<int> a;
 int main(){
-    int n,m,cnt=1;
+    int n,m; 
     cin >> n >> m;
-    list<int> ls;
-    vector<int> y;
-    for(int i=1; i<=n; i++)ls.push_back(i);
-    auto it = ls.begin();
-    while(!ls.empty()){
-        if(cnt==m){
-            cnt=1;
-            y.push_back(*it);
-            it = ls.erase(it);
-            if(it==ls.end())it=ls.begin();
+    for(int i=1; i<=n; i++){
+        q.push(n);
+    }int i=1;
+    while(!q.empty()){
+        if(i==m){
+            a.push_back(q.front());
+            q.pop();
+            i=0;
         }else{
-            cnt++;
-            if(*it==ls.back())it=ls.begin();
-            else it++;
-        }
-    }cout << '<';
-    for(int i=0; i<n-1; i++)cout << y[i] << ", ";
-    cout << y[n-1] << '>';
+            int x=q.front();
+            q.pop();
+            q.push(x);
+        }i++;
+    }
+    cout << '<';
+    for(int i=1; i<=n; i++){
+        cout << i;
+        if(i!=n)cout << ", ";
+    }cout << '>';
 }
