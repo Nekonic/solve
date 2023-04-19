@@ -1,14 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 using Graph = vector<vector<int>>;
-bool seen[500];
 int n,m,a,b,cnt;
-void f(int x,int d, Graph&G){
-    if(seen[x]||d>2)return;
-    seen[x]=1;
-    for(auto v : G[x]){
-        f(v,d+1,G);
-    }cnt++;
+bool seen[501];
+void f(int v, int d, Graph&G){
+    if(d==2)return;
+    if(!seen[v])cnt++;
+    seen[v]=1;
+    for(int i : G[v]){
+        f(i,d+1,G);
+    }
 }
 int main(){
     cin >> n >> m;
@@ -17,6 +18,8 @@ int main(){
         cin >> a >> b;
         G[a].push_back(b);
         G[b].push_back(a);
-    }f(1,0,G);
-    cout << cnt;
+    }seen[1]=1;
+    for(int v : G[1]){
+        f(v,0,G);
+    }cout << cnt;
 }
