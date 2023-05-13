@@ -107,7 +107,8 @@
     "scoped_allocator": "cpp",
     "shared_mutex": "cpp",
     "thread": "cpp",
-    "typeindex": "cpp"
+    "typeindex": "cpp",
+    "*.txt": "cpp"
   },
   "git.ignoreLimitWarning": true,
   "C_Cpp_Runner.useAddressSanitizer": false

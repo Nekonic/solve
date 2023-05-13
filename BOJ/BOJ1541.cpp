@@ -1,22 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-    vector<int> a;
+    deque<int> a;
     vector<char> b;
-    int n;
+    int n,sum;
     char c;
+    bool flag=0;
     while (cin >> n){
         a.push_back(n);
         cin >> c;
         b.push_back(c);
     }b.pop_back();
-    sort(a.begin(),a.end(),greater<>());
-    sort(b.begin(),b.end());
-    n=a.back();a.pop_back();
+    n=a.front();a.pop_front();
     for(auto i : b){
-        cout << n << '\n';
-        if(i=='+')n+=a.back();
-        else n-=a.back();
-        a.pop_back();
+        if(i=='+'&&!flag){
+            n+=a.front();
+            a.pop_front();
+        }else{
+            flag=1;
+            n-=a.front();
+            a.pop_front();
+        }
     }cout << n;
 }
