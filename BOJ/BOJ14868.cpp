@@ -1,38 +1,56 @@
 #include <bits/stdc++.h>
 using namespace std;
-int n,m,x,y,mxs=0,g[2001][2001];
+const int INF=1<<30;
+int n,k,m[2010][2010],x,y,ans,par[100010];
+pair<int,int> dxy[]={{-1,0},{0,-1},{0,1},{1,0}};
+queue<pair<int,int>> q,t;
+int root(int x){
+    if(par[x]==x)return x;
+    return root(par[x]);
+}
+bool unite(int a,int b){
+    a=root(a),b=root(b);
+    if(a==b)return false;
+    if(a>b)par[a]=b;
+    else par[b]=a;
+    return true;
+}
 int main(){
-    queue<pair<int,int>> q;
-    cin >> n >> m;
-    fill(&g[1][1],&g[n][n],-1);
-    for(int i=0; i<m; i++){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0),cout.tie(0);
+    for(int i=1; i<100002; i++)par[i]=i;
+    cin >> n >> k;
+    for(int i=1; i<=k; i++){
         cin >> x >> y;
-        g[x][y]=0;
-        q.push({x,y});
-    }while(!q.empty()){
-        auto x = q.front(); q.pop();
-        int i=x.first;
-        int j=x.second;
-        if(i+1<=n&&g[i+1][j]<0){
-            q.push({i+1,j});
-            g[i+1][j]=g[i][j]+1;
-        }if(i-1>0&&g[i-1][j]<0){
-            q.push({i-1,j});
-            g[i-1][j]=g[i][j]+1;
-        }if(j+1<=n&&g[i][j+1]<0){
-            q.push({i,j+1});
-            g[i][j+1]=g[i][j]+1;
-        }if(j-1>0&&g[i][j-1]<0){
-            q.push({i,j-1});
-            g[i][j-1]=g[i][j]+1;
-        }for(int i=1; i<=n; i++){
-            for(int j=1; j<=n; j++){
-                cout << g[i][j] << ' ';
-            }cout << '\n';
-        }cout << '\n';
-    }for(int i=1; i<=n; i++){
-        for(int j=1; j<=m; j++){
-            mxs = max(mxs,g[i][j]);
-        }
-    }cout << mxs;
+        m[x][y]=i;
+        t.push({x,y});
+    }while(k>1){
+        while(!t.empty()){
+            int x,y;
+            tie(x,y)=t.front();t.pop();
+            q.push({x,y});
+            for(auto d:dxy){
+                int dx,dy;
+                tie(dx,dy)=d;dx+=x,dy+=y;
+                if(dx<1||dy<1||dx>n||dy>n)continue;
+                if(m[dx][dy]==0||m[x][y]==m[dx][dy])continue;
+                if(unite(m[dx][dy],m[x][y]))k--;
+            }
+        }if(k==1){
+            cout << ans;
+            return 0;
+        }while(!q.empty()){
+            int x,y;
+            tie(x,y)=q.front();q.pop();
+            for(auto d:dxy){
+                int dx,dy;
+                tie(dx,dy)=d;dx+=x,dy+=y;
+                if(dx<1||dy<1||dx>n||dy>n)continue;
+                if(m[dx][dy]==0){
+                    m[dx][dy]=m[x][y];
+                    t.push({dx,dy});
+                }else if(unite(m[dx][dy],m[x][y]))k--;
+            }
+        }ans++;
+    }cout << ans;
 }
