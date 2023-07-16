@@ -1,25 +1,18 @@
-#include <iostream>
-#include <stack>
+#include <bits/stdc++.h>
 using namespace std;
+int n,m,ans;
+stack<int> s;
 int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int n,m,sum=0;
-    stack<int> a;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0),cout.tie(0);
     cin >> n;
-    while (n--){
+    while(n--){
         cin >> m;
-        if(m==0)a.pop();
-        else a.push(m);
-    }if(a.empty()){
-        cout << '0';
-        return 0;
-    }else{
-        int sum=0;
-        while (!a.empty()){
-            sum+=a.top();
-            a.pop();
-        }cout << sum;
+        if(!m)s.pop();
+        else s.emplace(m);
+    }while(!s.empty()){
+        ans+=s.top();
+        s.pop();
     }
+    cout << ans;
 }

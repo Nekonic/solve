@@ -1,27 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
-queue<int> q;
-vector<int> a;
 int main(){
-    int n,m; 
+    ios_base::sync_with_stdio(0);
+    cin.tie(0),cout.tie(0);
+    int n,m;
+    queue<int> q,ans;
     cin >> n >> m;
-    for(int i=1; i<=n; i++){
-        q.push(n);
-    }int i=1;
+    for(int i=1; i<=n; i++)q.push(i);
     while(!q.empty()){
-        if(i==m){
-            a.push_back(q.front());
+        for(int i=0; i<m-1; i++){
+            q.push(q.front());
             q.pop();
-            i=0;
-        }else{
-            int x=q.front();
-            q.pop();
-            q.push(x);
-        }i++;
+        }ans.push(q.front());
+        q.pop();
+    }cout << '<';
+    while(ans.size()>1){
+        cout << ans.front() << ", ";
+        ans.pop();
     }
-    cout << '<';
-    for(int i=1; i<=n; i++){
-        cout << i;
-        if(i!=n)cout << ", ";
-    }cout << '>';
+    cout << ans.front() << '>';
 }
