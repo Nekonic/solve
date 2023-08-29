@@ -1,0 +1,1 @@
+{"name":"Local: BOJ5972","url":"c:\\Users\\kybpl\\OneDrive\\문서\\GitHub\\cpp.solve\\BOJ5972.cpp","tests":[{"id":1693207223912,"input":"6 8\n4 5 3\n2 4 0\n4 1 4\n2 1 1\n5 6 1\n3 6 2\n3 2 6\n3 4 4","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\kybpl\\OneDrive\\문서\\GitHub\\cpp.solve\\BOJ5972.cpp","group":"local","local":true}
