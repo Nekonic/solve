@@ -1,27 +1,13 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-struct point{
-    int x1,x2,y;
-};
-bool cmp(const point&a,const point&b){
-    return a.x1 < b.x1;
-}
+int n,a[10000011],x1,x2,y;
 int main(){
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int n,cnt,max=0;
+    ios::sync_with_stdio(0);
+    cin.tie(0),cout.tie(0);
     cin >> n;
-    vector<point> a(n);
     for(int i=0; i<n; i++){
-        cin >> a[i].x1 >> a[i].x2 >> a[i].y;
-    }sort(a.begin(),a.end(),cmp);
-    for(int i=0; i<n; i++){
-        cnt=0;
-        for(int j=i; j<n; j++){
-            if(a[i].x2>=a[j].x1)cnt++;
-        }max=max<cnt?cnt:max;
-    }cout << max;
+        cin >> x1 >> x2 >> y;
+        a[x1]++,a[x2+1]--;
+    }for(int i=1; i<10000011; i++)a[i]+=a[i-1];
+    cout << *max_element(a,a+10000010);
 }
