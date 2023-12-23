@@ -1,1 +1,0 @@
-{"name":"Local: BOJ15964","url":"c:\\Users\\home\\Desktop\\c++\\BOJ15964.cpp","tests":[{"id":1665288181344,"input":"4 3","output":"7"},{"id":1665288191612,"input":"3 4","output":"-7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\home\\Desktop\\c++\\BOJ15964.cpp","group":"local","local":true}

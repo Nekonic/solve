@@ -1,1 +1,0 @@
-{"name":"Local: BOJ5347","url":"c:\\Users\\kybpl\\OneDrive\\바탕 화면\\c++_code\\BOJ5347.cpp","tests":[{"id":1664421622737,"input":"3\n15 21\n33 22\n9 10","output":"105\n66\n90"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\kybpl\\OneDrive\\바탕 화면\\c++_code\\BOJ5347.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: BOJ7785","url":"c:\\Users\\home\\Desktop\\cpp.solve\\BOJ7785.cpp","tests":[{"id":1681393930129,"input":"4\nBaha enter\nAskar enter\nBaha leave\nArtem enter","output":"Askar\nArtem"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\home\\Desktop\\cpp.solve\\BOJ7785.cpp","group":"local","local":true}

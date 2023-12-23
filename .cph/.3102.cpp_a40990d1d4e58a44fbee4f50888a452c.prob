@@ -1,1 +1,0 @@
-{"name":"Local: 3102","url":"c:\\Users\\home\\Desktop\\c++\\3102.cpp","tests":[{"id":1664589811127,"input":"7\npush( 5 )\ntop()\npush( 7 )\npush( 3 )\ntop()\npop()\nsize()","output":"5\n3\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\home\\Desktop\\c++\\3102.cpp","group":"local","local":true}
