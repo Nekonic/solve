@@ -1,12 +1,12 @@
-#include <iostream>
-#include <cstring>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 int main(){
-    int n;
-    string s,rs;
-    cin >> s;rs=s;
-    reverse(rs.begin(),rs.end());
-    if(!strcmp(s.c_str(),rs.c_str()))cout << 1;
-    else cout << 0;
+    string str;
+    cin >> str;
+    for(int i=0; i<str.size()/2; i++){
+        if(str[i]!=str[str.size()-i-1]){
+            cout << 0;
+            return 0;
+        }
+    }cout << 1;
 }
