@@ -1,8 +1,8 @@
-#include<bits/stdc++.h>
-using namespace std;
-int n,m,cnt;
+#include<stdio.h>
 int main(){
-    cin >> n >> m;
+    int n, m, cnt = 0;
+    scanf("%d", &n);
+    scanf("%d", &m);
     n -= m;
     cnt = n/500;
     n %= 500;
@@ -11,5 +11,6 @@ int main(){
     cnt += n/50;
     n %= 50;
     cnt += n/10;
-    cout << cnt;
+
+    printf("%d",cnt);
 }

@@ -1,28 +1,31 @@
 #include <iostream>
 using namespace std;
+int k,n,m,y=2022,d,a,b,c;
+int month[12]={31,28,31,30,31,30,31,31,30,31,30,31};
 int main(){
-    int month[12]={31,28,31,30,31,30,31,31,30,31,30,31};
-    int a,b,c,n,m=0,y=2023,d=1;
-    scanf("%d%d%d",&a,&b,&c);
-    int b1=0,b2=0;
-    n+=b+c;
-    while (a>=(n+1)){
-        if(b1==2){
-            n+=b;
-            b1=0;
-        }
-        if(b2==3){
-            n+=c;
-            b2=0;
-        }
-        b1++;
-        b2++;
+    scanf("%d%d%d",&k,&n,&m);
+    while(1){
+        if(!(c&1)){
+            if(a+b >= k) break;
+            a += n;
+        }if(c%3==0)b+=m;
+        c++;
+    }c++;
+    while(c!=0){
+        y++;
+        m=1;
         if(y%4==0&&y%100!=0||y%400==0)month[1]=29;
         else month[1]=28;
-        if(month[m]==d){
-            m++;
-            d=0;
-        }d++;
+        for(int i=0;i<12;i++){
+            if(month[i]<c){
+                c -= month[i];
+                m += 1;
+            }else{
+                d = c;
+                c = 0;
+                break;
+            }
+        }
     }
-    printf("%04d/%02d/%02d",y,m+1,d);
+    printf("%04d/%02d/%02d",y,m,d);
 }

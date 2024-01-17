@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> g[10001],rg[10001],component(10001);
+vector<int> g[10001],rg[10001];
 vector<vector<int>> components;
 vector<bool> seen(10001);
 stack<int> s;

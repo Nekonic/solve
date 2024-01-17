@@ -1,23 +1,21 @@
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-int map[504][504]={},sum,maxsum=0,m;
+int a[504][504],sum,maxsum=0,m;
 void dfs(int i,int j){
-    for(int y=i; y<m+i; y++){
-        for(int x=j; x<m+j; x++){
-            sum+=map[y][x];
+    for(int y=i; y<2+i; y++){
+        for(int x=j; x<2+j; x++){
+            sum+=a[y][x];
         }
     }
 }
 int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
     int n;
-    cin >> n >> m;
+    cin >> n;
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
-            cin >> map[i][j];
+            cin >> a[i][j];
         }
     }
     for(int i=0; i<n; i++){
